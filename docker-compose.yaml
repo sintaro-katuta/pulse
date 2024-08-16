@@ -1,0 +1,12 @@
+services:
+  web:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    container_name: pulse-front
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./front:/app
+    tty: true
+    stdin_open: true
