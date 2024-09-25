@@ -6,6 +6,7 @@ services:
     container_name: pulse-front
     ports:
       - "3000:3000"
+      - "24678:24678"
     volumes:
       - ./front:/app
     tty: true

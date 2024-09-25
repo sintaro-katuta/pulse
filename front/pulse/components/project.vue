@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const projects = [
     {
-        title: 'nazenaze',
+        title: 'なぜなぜ',
         description: '2024前期チーム制作作品',
         icon: 'i-simple-icons-tailwindcss',
         to: "/dashboard/1",

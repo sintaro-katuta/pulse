@@ -18,7 +18,7 @@ const links = [
     {
         label: 'Ticket',
         icon: 'i-mdi-ticket-outline',
-        to: `/dashboard/${id}/ticket`,
+        to: `/dashboard/${id}/tickets`,
         badge: '3'
     },
     {

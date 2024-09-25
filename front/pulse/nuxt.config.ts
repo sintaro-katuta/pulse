@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 import { defineNuxtConfig } from 'nuxt/config'
 import { resolve } from 'path'
 
@@ -12,5 +11,18 @@ export default defineNuxtConfig({
   ],
   alias: {
     '@': resolve(__dirname, './components'),
-  }
+  },
+  ssr: false,
+  watchers: {
+    webpack: {
+      poll: true
+    }
+  },
+  vite: {
+    server: {
+      watch: {
+        usePolling: true,
+      },
+    },
+  },
 })
