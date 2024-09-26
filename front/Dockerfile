@@ -10,9 +10,6 @@ WORKDIR /app/pulse
 
 RUN chmod -R 777 /app/pulse
 
-
 USER dev
-
-RUN bun upgrade
 
 CMD ["bun", "run", "dev"]
