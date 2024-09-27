@@ -27,7 +27,7 @@ const links = [{
     <template #right>
       <UColorModeButton />
 
-      <UButton to="https://github.com/sintaro-katuta/pulse" target="_blank" icon="i-simple-icons-github" color="gray" variant="ghost" />
+      <UButton to="https://github.com/nuxt/ui" target="_blank" icon="i-simple-icons-github" color="gray" variant="ghost" />
     </template>
 
     <template #panel>
