@@ -19,7 +19,9 @@
   "module": "index.ts",
   "devDependencies": {
     "@nuxt/image": "^1.7.0",
-    "@types/bun": "latest"
+    "@prisma/client": "^5.20.0",
+    "@types/bun": "latest",
+    "prisma": "^5.20.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
