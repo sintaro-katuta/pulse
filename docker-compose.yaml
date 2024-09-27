@@ -6,7 +6,19 @@ services:
     container_name: pulse-front
     ports:
       - "3000:3000"
+      - "24678:24678"
     volumes:
       - ./front:/app
     tty: true
     stdin_open: true
+  db:
+    image: postgres:14-alpine
+    container_name: pulse-db
+    environment:
+      POSTGRES_USER: pulse
+      POSTGRES_PASSWORD: pulse
+      POSTGRES_DB: pulse
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db:/var/lib/postgresql/data
