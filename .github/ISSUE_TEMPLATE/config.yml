@@ -2,4 +2,4 @@ blank_issues_enabled: true
 contact_links:
   - name: Issue
     about: Issue template
-    url: https://github.com/{REPO}/issues/new?template=issue.md&projects={ORGANIZATION OR REPO}/{PROJECT_NUMBER}&labels=enhancement
+    url: https://github.com/{REPO}/issues/new?template=issue_add_template.md&projects={ORGANIZATION OR REPO}/{PROJECT_NUMBER}&labels=enhancement
