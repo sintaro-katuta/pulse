@@ -10,9 +10,14 @@ WORKDIR /app/pulse
 
 RUN chmod -R 777 /app/pulse
 
+<<<<<<< Updated upstream
 
 USER dev
 
 RUN bun upgrade
 
 CMD ["bun", "run", "dev"]
+=======
+CMD ["bun", "run", "dev"]
+
+>>>>>>> Stashed changes
