@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const links = [
-    {
+  {
     label: 'Home',
     icon: 'i-heroicons-home',
     to: '/',
@@ -36,13 +36,13 @@ const links = [
 
 <template>
   <UDashboardLayout>
-    <UDashboardPanel :width="300" :resizable="{min: 200, max: 400}">
+    <UDashboardPanel :width="300" :resizable="{ min: 200, max: 400 }">
       <UDashboardNavbar>
         <template #left>
           <Logo class="w-auto h-6" />
         </template>
       </UDashboardNavbar>
-      
+
       <UDashboardSidebar>
         <UDashboardSearchButton label="Search" />
         <UDashboardSidebarLinks :links="links" />

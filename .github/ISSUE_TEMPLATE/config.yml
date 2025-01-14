@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Issue
+    about: Issue template
+    url: https://github.com/sintaro-katuta/pulse/issues/new?template=issue_add_template.md

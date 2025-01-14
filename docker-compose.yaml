@@ -6,15 +6,36 @@ services:
     container_name: pulse-front
     ports:
       - "3000:3000"
-      - "24678:24678"
     volumes:
       - ./front:/app
     tty: true
     stdin_open: true
+    networks:
+      - pulse_network
+      
+  api:
+    container_name: pulse-api
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+      - "5555:5555"
+    tty: true
+    working_dir: /app
+    volumes:
+      - ./api:/app
+    networks:
+      - pulse_network
+    
   db:
     image: postgres:14-alpine
     container_name: pulse-db
+    hostname: db
+    restart: always
+    tty: true
     environment:
+      TZ: Asia/Tokyo 
       POSTGRES_USER: pulse
       POSTGRES_PASSWORD: pulse
       POSTGRES_DB: pulse
@@ -22,3 +43,10 @@ services:
       - "5432:5432"
     volumes:
       - ./db:/var/lib/postgresql/data
+    networks:
+      - pulse_network
+      
+networks:
+  pulse_network:
+    driver: bridge
+

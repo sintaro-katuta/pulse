@@ -13,11 +13,6 @@ export default defineNuxtConfig({
     '@': resolve(__dirname, './components'),
   },
   ssr: false,
-  watchers: {
-    webpack: {
-      poll: true
-    }
-  },
   vite: {
     server: {
       watch: {

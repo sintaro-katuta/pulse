@@ -1,4 +1,9 @@
 <script setup>
+
+const title = ref('')
+const description = ref('')
+const selected = ref('public')
+
 const options = [{
     label: 'Public',
     value: 'public',
@@ -10,7 +15,7 @@ const options = [{
     icon: 'i-heroicons-lock-closed',
     help: "Only you can see this project."
 }]
-const selected = ref('public')
+
 </script>
 
 <template setup>
@@ -31,8 +36,8 @@ const selected = ref('public')
             <URadioGroup v-model="selected" :options="options" class="py-3">
                 <template #label="{ option }">
                     <div>
-                    <UIcon :name="option.icon" />
-                    {{ option.label }}
+                        <UIcon :name="option.icon" />
+                        {{ option.label }}
                     </div>
                 </template>
             </URadioGroup>
@@ -40,9 +45,9 @@ const selected = ref('public')
             <template #footer>
                 <div class="flex justfu-start items-center gap-3">
                     <UButton color="red" to="/dashboard">Cancel</UButton>
-                    <UButton color="primary">Create</UButton>
+                    <UButton color="primary" @click="createProject">Create</UButton>
                 </div>
             </template>
         </UCard>
     </div>
-</template> 
+</template>
