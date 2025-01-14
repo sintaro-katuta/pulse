@@ -181,4 +181,4 @@ dist
 **/public/workbox-*.js.map
 # prisma
 **/prisma/schema.prisma
-./db/**
+/db/
