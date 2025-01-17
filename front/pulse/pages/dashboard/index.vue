@@ -2,12 +2,7 @@
 const route = useRoute()
 const id = route.params.id
 
-const projects = {
-  'id': 1,
-  'name': 'nazenaze',
-  'description': '2024前期チーム制作作品',
-  'icon': 'i-simple-icons-tailwindcss'
-}
+const { data: projects } = await useFetch('http://localhost:8000/api/projects');
 
 const links = [
   {
@@ -34,9 +29,11 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="w-full h-full p-3 mx-3">
-    <UHorizontalNavigation :links="links" class="border-b border-gray-200 dark:border-gray-800" />
-    <UPageHeader :handline="projects.name" :title="projects.name" :description="projects.description"
-      :icon="projects.icon" />
+  <div class="w-full h-full mx-5">
+    <UPageHeader handline="Projects" title="Projects" description="Access to participating projects"
+      :icon="projects.icon" class="text-green-500" />
+    <UDashboardCard v-for="project in projects" :key="project" :title="project.name" :description="project.description"
+      icon="i-simple-icons-tailwindcss" class="cursor-pointer mb-5" @click="$router.push(`/dashboard/${project.id}`)" />
+    {{ response }}
   </div>
 </template>

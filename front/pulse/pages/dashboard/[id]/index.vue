@@ -34,7 +34,7 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="w-full h-full p-3 mx-3">
+  <div class="w-full h-full mx-5">
     <UHorizontalNavigation :links="links" class="border-b border-gray-200 dark:border-gray-800" />
     <UPageHeader :handline="projects.name" :title="projects.name" :description="projects.description"
       :icon="projects.icon" />
