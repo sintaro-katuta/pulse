@@ -4,5 +4,5 @@ COPY . .
 
 RUN yarn install
 
-# CMD [ "yarn", "start" ]
+CMD [ "npm", "start" ]
 
