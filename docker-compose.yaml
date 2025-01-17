@@ -9,7 +9,9 @@ services:
     volumes:
       - ./front:/app
     tty: true
+<<<<<<< Updated upstream
     stdin_open: true
+=======
     networks:
       - pulse_network
       
@@ -49,4 +51,6 @@ services:
 networks:
   pulse_network:
     driver: bridge
+    
 
+>>>>>>> Stashed changes
