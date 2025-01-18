@@ -7,6 +7,8 @@ const cors = require("cors");
 const prisma = new PrismaClient();
 const app = express();
 
+
+
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
@@ -31,9 +33,18 @@ app.post("/api/projects", async (req, res) => {
 
 // === Tickets ===
 // Get all tickets
-app.get("/api/tickets", async (req, res) => {
+app.get("/api/tickets/:id", async (req, res) => {
+  const projectId = parseInt(req.params.id, 10)
   const tickets = await prisma.ticket.findMany({
-    include: { tags: true },
+    where: { projectId },
+    select: {
+      name: true,
+      title: true,
+      status: true,
+      priority: true,
+      assignee: true,
+      createdAt: true,
+    },
   });
   res.json(tickets);
 });

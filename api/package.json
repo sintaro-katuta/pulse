@@ -1,14 +1,13 @@
 {
   "scripts": {
-    "start": "node index.js & npx prisma studio",
-    "studio": ""
+    "start": "node index.js & npx prisma studio"
   },
   "dependencies": {
-    "@prisma/client": "^5.21.1",
+    "@prisma/client": "^5.17.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.1",
-    "prisma": "^5.21.1"
+    "prisma": "^5.22.0"
   },
   "name": "app",
   "version": "1.0.0",

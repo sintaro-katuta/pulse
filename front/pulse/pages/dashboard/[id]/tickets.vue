@@ -2,6 +2,8 @@
 const route = useRoute()
 const id = route.params.id
 
+const { data: tickets } = await useFetch(`http://localhost:8000/api/tickets/${id}`)
+
 const links = [
   {
     label: 'Overview',
@@ -20,36 +22,6 @@ const links = [
     to: `/dashboard/${id}/settings`
   }
 ]
-
-const tickets = [{
-  id: 1,
-  name: 'Create a new design',
-  title: 'Create a new design',
-  description: 'Create a new design for the homepage',
-  status: 'open',
-  priority: 'high',
-  assignee: 'John Doe',
-  created_at: '2021-09-01',
-  updated_at: '2021-09-01'
-}, {
-  id: 2,
-  title: 'Fix the footer',
-  description: 'Fix the footer on the homepage',
-  status: 'in_progress',
-  priority: 'medium',
-  assignee: 'John Doe',
-  created_at: '2021-09-01',
-  updated_at: '2021-09-01'
-}, {
-  id: 3,
-  title: 'Update the about page',
-  description: 'Update the about page with new content',
-  status: 'closed',
-  priority: 'low',
-  assignee: 'John Doe',
-  created_at: '2021-09-01',
-  updated_at: '2021-09-01'
-}]
 
 const users = [
   'John Doe',
@@ -98,6 +70,6 @@ definePageMeta({
         <UButton icon="i-heroicons-plus">Add</UButton>
       </div>
     </div>
-    <UTable v-model="ticket" :rows="tickets" @select="select" class="mt-4" />
+    <UTable v-model="ticket" :rows="tickets" @select="select" class="mt-4"></UTable>
   </div>
 </template>
