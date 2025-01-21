@@ -33,6 +33,7 @@ definePageMeta({
     <UPageHeader handline="Projects" title="Projects" description="Access to participating projects"
       :icon="projects.icon" class="text-green-500" />
     <UDashboardCard v-for="project in projects" :key="project" :title="project.name" :description="project.description"
-      icon="i-heroicons-window" class="cursor-pointer mb-5" @click="$router.push(`/dashboard/${project.id}`)" />
+      icon="i-simple-icons-tailwindcss" class="cursor-pointer mb-5" @click="$router.push(`/dashboard/${project.id}`)" />
+    {{ response }}
   </div>
 </template>
