@@ -1,8 +1,10 @@
-FROM node:22-alpine
+FROM node:latest
+
+COPY package.json ./
+
+RUN npm install
 
 COPY . .
-
-RUN yarn install
 
 CMD [ "npm", "start" ]
 
